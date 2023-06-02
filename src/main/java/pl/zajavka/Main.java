@@ -10,10 +10,11 @@ public class Main {
 
         JdbcTemplateExample example = context.getBean(JdbcTemplateExample.class);
 
-//        example.insert();
-//        example.update();
+        example.insert();
+        example.update();
         example.select();
-//        example.delete();
+        example.delete();
+        example.select();
 
     }
 }

@@ -45,4 +45,11 @@ public class JdbcTemplateExample {
         System.out.println(result2);
 
     }
+
+    public void delete() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        String sql="DELETE FROM PERSON WHERE NAME = ?";
+        var result = jdbcTemplate.update(sql, "Roman");
+        System.out.println("Rows deleted: "+result);
+    }
 }
