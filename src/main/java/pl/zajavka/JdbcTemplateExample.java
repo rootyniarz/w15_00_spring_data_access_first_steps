@@ -15,4 +15,10 @@ public class JdbcTemplateExample {
         String sql="INSERT INTO PERSON (NAME, AGE) VALUES (?, ?)";
         jdbcTemplate.update(sql,"Roman",25);
     }
+
+    public void update() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        String sql="UPDATE PERSON SET AGE = ? WHERE NAME = ?";
+        jdbcTemplate.update(sql,40,"Roman");
+    }
 }

@@ -11,7 +11,7 @@ public class Main {
         JdbcTemplateExample example = context.getBean(JdbcTemplateExample.class);
 
         example.insert();
-//        example.update();
+        example.update();
 //        example.select();
 //        example.delete();
 
