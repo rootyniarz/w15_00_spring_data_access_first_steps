@@ -20,8 +20,11 @@ public class Main {
 //        example.SimpleJdbcInsertExample();
 
 
-        SimpleJdbcCallExample example = context.getBean(SimpleJdbcCallExample.class);
-        example.example();
+//        SimpleJdbcCallExample example = context.getBean(SimpleJdbcCallExample.class);
+//        example.example();
+
+        NamedParameterJdbcTemplateExamples examples = context.getBean(NamedParameterJdbcTemplateExamples.class);
+        examples.namedParameterJdbcTemplateExample();
 
     }
 }
