@@ -16,8 +16,12 @@ public class Main {
 //        example.delete();
 //        example.select();
 
-        SimpleJdbcInsertExample example = context.getBean(SimpleJdbcInsertExample.class);
-        example.SimpleJdbcInsertExample();
+//        SimpleJdbcInsertExample example = context.getBean(SimpleJdbcInsertExample.class);
+//        example.SimpleJdbcInsertExample();
+
+
+        SimpleJdbcCallExample example = context.getBean(SimpleJdbcCallExample.class);
+        example.example();
 
     }
 }
