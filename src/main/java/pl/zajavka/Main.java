@@ -8,13 +8,16 @@ public class Main {
         ApplicationContext context
                 = new AnnotationConfigApplicationContext(DataSourceConfiguration.class);
 
-        JdbcTemplateExample example = context.getBean(JdbcTemplateExample.class);
+//        JdbcTemplateExample example = context.getBean(JdbcTemplateExample.class);
+//
+//        example.insert();
+//        example.update();
+//        example.select();
+//        example.delete();
+//        example.select();
 
-        example.insert();
-        example.update();
-        example.select();
-        example.delete();
-        example.select();
+        SimpleJdbcInsertExample example = context.getBean(SimpleJdbcInsertExample.class);
+        example.SimpleJdbcInsertExample();
 
     }
 }
