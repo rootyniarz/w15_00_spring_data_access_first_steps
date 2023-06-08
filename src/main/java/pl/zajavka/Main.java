@@ -2,6 +2,7 @@ package pl.zajavka;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.transaction.support.TransactionTemplate;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +26,9 @@ public class Main {
 
         NamedParameterJdbcTemplateExamples examples = context.getBean(NamedParameterJdbcTemplateExamples.class);
         examples.namedParameterJdbcTemplateExample();
+
+        TransactionTemplateExample jdbcTemplateExample = context.getBean(TransactionTemplateExample.class);
+        jdbcTemplateExample.example1();
 
     }
 }
