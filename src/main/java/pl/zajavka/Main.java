@@ -24,11 +24,11 @@ public class Main {
 //        SimpleJdbcCallExample example = context.getBean(SimpleJdbcCallExample.class);
 //        example.example();
 
-        NamedParameterJdbcTemplateExamples examples = context.getBean(NamedParameterJdbcTemplateExamples.class);
-        examples.namedParameterJdbcTemplateExample();
+//        NamedParameterJdbcTemplateExamples examples = context.getBean(NamedParameterJdbcTemplateExamples.class);
+//        examples.namedParameterJdbcTemplateExample();
 
         TransactionTemplateExample jdbcTemplateExample = context.getBean(TransactionTemplateExample.class);
-        jdbcTemplateExample.example1();
+        jdbcTemplateExample.example2();
 
     }
 }
