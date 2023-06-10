@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -19,25 +20,8 @@ public class TransactionTemplateExample {
     private SimpleDriverDataSource simpleDriverDataSource;
     private TransactionTemplate transactionTemplate;
 
-    public void example1() {
-        Integer result = transactionTemplate.execute(status -> someMethod());
-        System.out.println("Rows: " + result);
-    }
-
-    public void example2() {
-        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
-            @Override
-            protected void doInTransactionWithoutResult(TransactionStatus status) {
-                someVoidMethod();
-                if (true){ // rolling back transaction if TRUE
-                    status.setRollbackOnly();
-                    log.error("Transaction ROLLBACK!");
-                }
-            }
-        });
-    }
-
-    private Integer someMethod() {
+    @Transactional
+    public Integer someMethod() {
         int result = 0;
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
 
@@ -52,7 +36,7 @@ public class TransactionTemplateExample {
         return result;
     }
 
-    private void someVoidMethod() {
+    public void someVoidMethod() {
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
 
         Person person1 = Person.builder().name("Roman").age(55).build();

@@ -28,7 +28,7 @@ public class Main {
 //        examples.namedParameterJdbcTemplateExample();
 
         TransactionTemplateExample jdbcTemplateExample = context.getBean(TransactionTemplateExample.class);
-        jdbcTemplateExample.example2();
+        jdbcTemplateExample.someMethod();
 
     }
 }
